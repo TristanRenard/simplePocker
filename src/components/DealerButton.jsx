@@ -1,7 +1,6 @@
-import { Center, Text3D, useHelper } from "@react-three/drei"
+import { Center, Text3D } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
-import { SpotLightHelper } from "three"
 
 const DealerButton = () => {
   const spotLightRef = useRef()
@@ -11,7 +10,6 @@ const DealerButton = () => {
     spotLightRef.current.target = buttonRef.current
   })
 
-  useHelper(spotLightRef, SpotLightHelper, "cyan")
 
   return (
     <group position={[3, 3, 0]} rotation-x={-Math.PI / 2} ref={buttonRef} castShadow receiveShadow>
