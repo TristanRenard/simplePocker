@@ -1,10 +1,11 @@
 /* eslint-disable max-lines */
 import js from "@eslint/js"
 import reactThreeEslintPlugin from "@react-three/eslint-plugin"
+import vitest from "@vitest/eslint-plugin"
 import react from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 import reactRefresh from "eslint-plugin-react-refresh"
-import globals from "globals"
+import globals, { jest } from "globals"
 
 export default [
   { ignores: ["dist"] },
@@ -21,12 +22,15 @@ export default [
     },
     settings: { react: { version: "18.3" } },
     plugins: {
+      jest,
       react,
+      vitest,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       "@react-three": reactThreeEslintPlugin,
     },
     rules: {
+      ...vitest.configs.recommended.rules,
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
@@ -221,8 +225,9 @@ export default [
       "no-sequences": "error",
       "no-shadow": "error",
       "no-throw-literal": "error",
-      "no-undef-init": "error",
-      "no-undefined": "error",
+      "no-undef-init": "off",
+      "no-undef": "off",
+      "no-undefined": "off",
       "no-underscore-dangle": [
         "error",
         {
@@ -327,51 +332,6 @@ export default [
         "error",
         "never"
       ],
-      "padding-line-between-statements": [
-        "error",
-        {
-          "blankLine": "always",
-          "prev": "*",
-          "next": [
-            "break",
-            "case",
-            "cjs-export",
-            "class",
-            "continue",
-            "do",
-            "if",
-            "switch",
-            "try",
-            "while",
-            "return"
-          ]
-        },
-        {
-          "blankLine": "always",
-          "prev": [
-            "break",
-            "case",
-            "cjs-export",
-            "class",
-            "continue",
-            "do",
-            "if",
-            "switch",
-            "try",
-            "while",
-            "return"
-          ],
-          "next": "*"
-        },
-        {
-          "blankLine": "never",
-          "prev": [
-            "const",
-            "export"
-          ],
-          "next": "const"
-        }
-      ],
       "quotes": [
         "error",
         "double",
@@ -397,7 +357,8 @@ export default [
         }
       ],
       "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off"
+      "react/prop-types": "off",
+      "react/no-unknown-property": "off"
     },
   },
 ]
