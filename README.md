@@ -7,7 +7,7 @@ This project used my personal boiler plate package.json to install all dependenc
 This project is based on R3f (React Three Fiber) and Vite.
 
 ## Production
-https://simple-poker.vercel.app/
+https://tristan-simple-poker.vercel.app/
 
 ## Installation
 
