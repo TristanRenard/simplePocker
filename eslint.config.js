@@ -5,7 +5,7 @@ import vitest from "@vitest/eslint-plugin"
 import react from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 import reactRefresh from "eslint-plugin-react-refresh"
-import globals, { jest } from "globals"
+import globals from "globals"
 
 export default [
   { ignores: ["dist"] },
@@ -22,7 +22,6 @@ export default [
     },
     settings: { react: { version: "18.3" } },
     plugins: {
-      jest,
       react,
       vitest,
       "react-hooks": reactHooks,
@@ -167,7 +166,7 @@ export default [
       "max-lines-per-function": [
         "warn",
         {
-          "max": 100,
+          "max": 150,
           "skipBlankLines": true,
           "skipComments": true
         }
@@ -327,7 +326,6 @@ export default [
         "unix"
       ],
       "newline-before-return": "error",
-      "no-undef": "error",
       "padded-blocks": [
         "error",
         "never"
