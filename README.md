@@ -1,16 +1,19 @@
-# Game Simple Pocker - Tristan Renard B3 Dev A
+# Game Simple Poker - Tristan Renard B3 Dev A
+
+repository:
+https://github.com/TristanRenard/simplePoker
 
 This project used my personal boiler plate package.json to install all dependencies and configurations to start a new project using R3f.
 This project is based on R3f (React Three Fiber) and Vite.
 
 ## Production
-https://simple-pocker.vercel.app/
+https://simple-poker.vercel.app/
 
 ## Installation
 
 1. Clone the repository:
   ```bash
-  git clone https://github.com/TristanRenard/simplePocker.git
+  git clone https://github.com/TristanRenard/simplePoker.git
   cd 
   ```
 
