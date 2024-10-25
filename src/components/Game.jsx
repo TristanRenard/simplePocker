@@ -109,7 +109,10 @@ const PokerGame = () => {
           <h1 className="text-2xl font-extrabold text-white">Simple Poker Game</h1>
           <h2 className="text-xl font-semibold text-white">Turns Left: {turns}</h2>
         </div>
-        <div className="flex justify-center items-center gap-3">
+        <h3 className="text-white flex self-start w-1/4 pl-12">
+          {turns > 0 && ("Select cards to exchange and click on the deck to exchange them")}
+        </h3>
+        <div className="flex justify-start items-center gap-3">
           <button className="bg-red-500 px-6 py-3 rounded-md text-white font-bold pointer-events-auto" onClick={finishGame}>
             Finish Game
           </button>
